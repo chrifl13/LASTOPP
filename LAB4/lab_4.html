@@ -1,0 +1,195 @@
+﻿<html>
+
+<head>
+	 
+	<meta charset="utf-8">
+	<title> IS 104 lab_4 Alfabetisk listing av programspråk</title>
+	<link rel="stylesheet" href="lab_4.css" type="text/css">
+	<script src="jquery-2.0.3.js"></script>
+	<script src="jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script>
+		
+		$(function() {
+				//markere lenken og rulle til det valgte elementet i DOM
+				$( ".firstUL li" ).each(function() { 
+					$( this ).click(function() { //fange hendelsen når bruker klikker en av bokstavene
+						$( ".firstUL li" ).removeClass( "selected" ); 	//utgangspunktet skal fjerne klassen "selected", hvis den finnes
+						$( this ).addClass( "selected" ); 				//leggtil "selected" klassen til det elementet brukeren har klikket på
+						elementClick = $( this ).attr( "id" ); 			//få tak i den tilsvarende "id", altså "a", "b", osv.
+
+						//ruller ned til til det valgte DOMelementet content-for-X, der "x" er tilsvarende valgt bokstav
+						$( ".content-container" ).scrollTo($( "#content-for-"+elementClick ), 800);
+
+						//endre på bakgrunnsfarge
+						$( ".content-container div" ).css( { 'background-color' : '#ffffff' } );
+						$( ".content-container #content-for-"+elementClick ).css( { 'background-color' : '#d2e2fc' } );
+					});
+				});
+
+				//når "Tilbake til toppen" blir klikket må "a" markeres og innholdet må rulles til toppen
+				$( '.return-to-top' ).click(function() {
+					$( ".firstUL li").each(function() {
+						$( ".firstUL li" ).removeClass( "selected" );//fjern klasse "selected" hvis den finnes
+					});
+
+					//legg til klassen selected til første bokstav i alfabetet
+					$( "a" ).addClass( "selected" );
+					//rulle til et element "a" i dette tilfellet.
+					$( ".content-container" ).scrollTo($( "#content-for-a" ), 800);
+					//sette bakgrunnsfargen til hvit i alle div-ene og til lyseblått på hvilken div somer valgt, altså (a i dette tilfelle)
+					$( ".content-container div" ).css( { 'background-color' : '#ffffff' } );
+					$( ".content-container #content-for-a" ).css( { 'background-color' : '#d2e2fc' } );
+
+
+				});
+
+		});
+	</script>
+
+</head>
+
+
+<body>
+	<div id="body-container">
+
+		<div class="glossary-container">
+
+			<ul class="firstUL">
+				<li id="a" class="selected">A</li>
+				<li id="b">B</li>
+				<li id="c">C</li>
+				<li id="d">D</li>
+				<li id="e">E</li>
+				<li id="f">F</li>
+				<li id="g">G</li>
+				<li id="h">H</li>
+				<!-- bokstaver fra alfabetet går her  -->
+			</ul>
+		
+		</div>
+
+		<div class="content-container">
+			<!-- A -->
+			<div id="content-for-a" style="background-color: #d2e2fc">
+				<!-- Innhold for A -->
+				<dl>
+					<dt>ActionScript</dt>
+						<dd>
+							ActionScript er et programmeringsspråk basert på ECMAScript som blir brukt primært til utvikling av nettsider og programvare for Adobe Flash Player-plattformen, men også i noen databaseapplikasjoner og grunnleggende robotikk.
+						</dd>
+					<dt>AppleScript</dt>
+						<dd>
+							AppleScript er et skriptspråk av Apple som brukes i Mac OS og Mac OS X.
+										</dd>
+					<dt>Asp</dt>
+						<dd>
+							Asp Active Server Pages (ASP) er en teknologi for å lage websider som inneholder server-side scripts. ASP er utviklet av Microsoft, og ble utviklet spesifikt for å håndtere utvikling av webapplikasjoner. ASP er innebygd i Microsofts Internet Information Service (IIS), og gir et script-grensesnitt som er enkelt å lære og som støttes av mange eksisterende HTML-designverktøy.
+						</dd>
+				</dl>
+				<p class="return-to-top">Tilbake til toppen</p>
+			</div>
+
+			<!-- B -->
+			<div id="content-for-b" style="background-color: #d2e2fc">
+				<!-- Innhold for B -->
+				<dl>
+					
+					<dt>BASIC</dt>
+						<dd>
+							BASIC (akronym for Beginner's All-purpose Symbolic Instruction Code) er et programmeringsspråk som ble utviklet i USA i 1963, av John George Kemeny og Thomas Eugene Kurtz på Dartmouth College, med det mål for øye å gjøre programmering enklere. BASIC er et relativt lettfattelig programmeringsspråk og benytter seg av bestemte engelske ord i sine kommandoer.
+							Eksempler på BASIC-dialekter som brukes i dag er Visual Basic, QBasic, REALBasic, DarkBasic, BlitzBasic, iBasic, Liberty Basic og PureBasic.
+						</dd>
+				</dl>
+				<p class="return-to-top">Tilbake til toppen</p>
+			</div>
+
+			<!-- C -->
+			<div id="content-for-c" style="background-color: #d2e2fc">
+				<!-- Innhold for C -->
+				<dl>
+					<dt>C</dt>
+						<dd>
+							C er et høynivå programmeringsspråk. Med dette språket er det mulig å uttrykke seg svært maskinnært til høynivåspråk å være. Til forskjell fra lavnivåspråkene kan C-kode kompileres for de fleste maskiner. Siden en både kan uttrykke seg maskinnært og samtidig enkelt flytte programmer mellom ulike maskiner, kan en si at C inntar et mellomnivå mellom høynivåspråk og lavnivåspråk, som er årsaken til at C av og til kalles et "portabelt assemblerspråk".
+							Språket ble utviklet fra 1969 til 1973 av Dennis Ritchie i forbindelse med implementasjonen av Unix, og er så anvendelig at det brukes til de fleste oppgaver. Mange andre språk har en syntaks som ligner på C, slik som Perl og Java, men oppbyggingen av disse språkene er annerledes. Direkte etterfølgere av C er Objective-C og C++.
+						</dd>
+					<dt>C++</dt>
+						<dd>
+							C++ er et populært høynivå programmeringsspråk som er en utvidelse av språket C. C++ ble opprinnelig kalt «C with Classes» og ble utviklet og implementert av dansken Bjarne Stroustrup omkring 1983–85, som da jobbet for AT&T Bell Labs.
+							C++ er et multiparadigmespråk, med støtte for funksjonell programmering, objektorientert programmering (OOP), dataabstraksjon og generisk programmering. Populariteten skyldes både at det bygger på C og at det er implementert for de fleste operativsystem.
+						</dd>
+					<dt>COBOL</dt>
+						<dd>
+							COBOL (COmmon Business Oriented Language) er et programmeringsspråk som har vært i utstrakt bruk for koding av økonomiske og administrative transaksjonssystemer. Det ble konstruert i 1959 initiert av amerikanske forsvarsmyndigheter. COBOL brukes fortsatt i mange eksisterende systemer fordi disse ofte er store, godt uttestet og ikke er utsatt for sterke endringskrav. COBOL og systemene kodet i dette språket ble sterkt fokusert i forbindelse med år 2000-problemet.
+						</dd>
+				</dl>
+				<p class="return-to-top">Tilbake til toppen</p>
+			</div>
+
+			<!-- d -->
+			<div id="content-for-d" style="background-color: #d2e2fc">
+				<!-- Innhold for d -->
+				<dl>
+					<dt>D</dt>
+						<dd>
+							D er et programmeringsspråk utviklet av Walter Bright. Det tar mål av seg til å kombinere ytelse og fleksibillitet fra språk som C og C++, med høynivåfunksjonalitet og programmerervennlighet fra språk som Ruby og Python. D er et multiparadigmespråk, og har egne primitiver for å støtte både imperativ, funksjonell, generisk og objektorientert programmering. Språket bruker en syntaks som er svært lik den som brukes i C, C++, Java og C#.
+						</dd>
+					<dt>Delphi</dt>
+						<dd>
+							Delphi er et programvareutviklingsmiljø (Integrated Development Environment (IDE)) basert på programmeringsspråket Pascal. Grunnlaget var det særdeles populære verktøyet Turbo Pascal for PC med en effektiv kompilator utviklet under ledelse av Anders Hejlsberg. Borland Software Inc. utviklet en objektbasert utvidelse kalt Object Pascal som de i neste runde tilpasset for bruk mot Windows («Objekt Pascal for Windows»). De neste versjonene ble lansert under navnet Delphi.
+						</dd>
+				</dl>
+				<p class="return-to-top">Tilbake til toppen</p>
+			</div>
+			
+			<!-- e -->
+			<div id="content-for-e" style="background-color: #d2e2fc">
+				<!-- Innhold for e -->
+				<dl>
+					<dt>Erlang</dt>
+						<dd>
+							Erlang er et funksjonelt programmeringsspråk designet med hensyn på parallellprogrammering. Språket ble utviklet av Ericsson på 1980-tallet til bruk innen telekommunikasjon, og brukes blant annet av selskaper som Amazon, Yahoo! og Facebook. Et Erlang-program består typisk av mange små prosesser som kommuniserer ved hjelp av asynkrone meldinger.
+						</dd>
+					 
+				</dl>
+				<p class="return-to-top">Tilbake til toppen</p>
+			</div>
+			
+			<!-- f -->
+			<div id="content-for-f" style="background-color: #d2e2fc">
+				<!-- Innhold for f -->
+				<dl>
+					<dt>Fortran</dt>
+						<dd>
+							Fortran, tidligere kalt FORTRAN (FORmula TRANslation), blir ofte ansett som det første programmeringsspråket, siden det i prinsippet (og senere også i praksis) var portabelt. Fortran var uavhengig av datamaskinens maskinspråk, og kunne benyttes av ulike datamaskinarkitekturer.
+						<p class="return-to-top">Tilbake til toppen</p>
+		</div>
+			<!-- g -->
+			<div id="content-for-g" style="background-color: #d2e2fc">
+				<!-- for g -->
+				<dl>
+					<dt>Groovy</dt>
+						<dd>
+							Groovy er et objektorientert programmeringsspråk for Java-plattformen. Det er et dynamisk språk med funksjoner som ligner på de av Python, Ruby, Perl, og Smalltalk. Den kan brukes som et skriptspråk for Java Platform, er dynamisk kompilert til Java Virtual Machine (JVM) bytecode, og interoperates med andre Java-kode og biblioteker. Groovy bruker en Java-lignende curly-brakett syntaks. De fleste Java-koden er også syntaktisk gyldig Groovy.
+						</dd>
+						<p class="return-to-top">Tilbake til toppen</p>
+			<!-- h -->
+			<div id="content-for-h" style="background-color: #d2e2fc">
+				<!-- for h -->
+				<dl>
+					<dt>Haskell</dt>
+						<dd>
+							 Haskell er et standardisert, rent funksjonelt programmeringsspråk navngitt etter matematikeren Haskell Curry. Haskell byr på sterk typesetting og lat evaluering i flere implementasjoner, deriblant GHC. Som et funksjonelt språk er bruken av funksjoner den primære måten å konstruere et program med. Språket har dype røtter i Curry sin forskning og har derfor en mer matematisk tilnærming programmering enn imperative språk. Et eksempel på dette er at alle variabler er uforanderlige.
+							 </dd>
+						<p class="return-to-top">Tilbake til toppen</p>
+			
+	</div>
+
+	
+</body>
+<address> Laget 21/22/23. Oktober 2013<br>
+	av Christian Fjelde Lima</address>
+	
+	<!-- leverte veldig forsinket var vanskelig å finne ut av av og til -->
+
+
+</html>

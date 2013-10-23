@@ -1,0 +1,71 @@
+ 
+
+body{
+	margin:0;
+	padding:0;
+}
+
+#body-container{
+	width: 415px;					 
+	height: 500px;					 
+	margin: 0 auto;					 
+	border: 1px solid #3285ef;		 
+}
+
+#body-container .glossary-container{
+	clear: both;  
+}
+
+
+#body-container .content-container{
+	width: 415px; /* bredden settes til content-container */
+	height: 430px;	/* Her settes høyden til content-container */
+	overflow: auto;	/* Et rullefelt vises når innholdet er større enn den spesifiserte høyden */
+	font-size: 10pt; /* Skriftstørrelse på 10 punkter */
+	clear: both; /* forhinder at objekter flyter rundt på sidene */
+	font-family: 'Arial', Verdana, Tahoma; /* Skrift typen endres
+	
+}
+
+#body-container .content-container div{
+	padding-left: 10px;	/* padding/utfylling settes til 10px */
+	border-bottom: 1px #666666 solid; 	 
+}
+
+#body-container .content-container p.return-to-top{
+	color: #0066ff; /*farge på "tilbake til toppen" tekst */
+	text-decoration: underline; /* understreker teksten*/
+	text-align: right; /* plasserer teksten til høyre */
+	margin-right: 10px; /* marge på høyre side forholder seg til 10px */
+	cursor: pointer; /*endrer peker til en 'hånd' */
+}
+
+ 
+
+.firstUL{
+	padding: 0px 0px 0px 10px; 	/* kun litt padding/utfylling mot venstre, men ikke mot de andre sidene */
+	margin: 0px; /* alle margene settes til 0px */
+	background-color: #3285ef;	/* endrer bakgrunnsfarger */
+}
+
+.firstUL li{
+	/* For alle listelementer settes det bakgrunnsbilde ved hjelp av "CSS image sprites" */
+	background: transparent url(link_sprite_img.jpg) no-repeat scroll 0 0;
+	display: inline; /* utlistingene vil bli satt på rad (som tekst)*/
+	font-family: 'Arial', Verdana, Tahoma; /* forskjellige skrifttyper */
+	font-size: 16pt; /* endrer skriftstørrelese */ 
+	padding: 10px 15px 22px;/* Setter padding/utfylling til alle sidene */
+	line-height: 70px; /* setter rigktig linjehøyde*/
+	cursor: pointer; /* endrer peker til 'hånd'*/
+}
+
+.firstUL li.selected{
+	background: transparent url(link_sprite_img.jpg) no-repeat scroll 0px -57px;
+	color: #ffffff;	/* endrer fargen på skriften i "bokstav-knappene" til hvit */
+	 
+}
+
+
+
+
+
